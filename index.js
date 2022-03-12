@@ -27,15 +27,12 @@ const obj={
 let max = obj.a0.aa[0]
 let min = obj.a0.aa[0]
 for (const key in obj) {
-  // skip loop if the property is from prototype
   if (!obj.hasOwnProperty(key)) continue;
 
   const ob = obj[key];
   for (const prop in ob) {
-    // skip loop if the property is from prototype
     if (!ob.hasOwnProperty(prop)) continue;
 
-    // your code
     if (prop === 'aa') {
       const aaMax = Math.max(...ob[prop])
       if (aaMax > max) max = aaMax
